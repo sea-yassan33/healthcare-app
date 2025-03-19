@@ -1,19 +1,16 @@
-import Image from "next/image";
-import Link from 'next/link';
-import { tv } from 'tailwind-variants';
+import HeroSection from "./_components/Section/hero";
+import NewsSection from "./_components/Section/news";
+import AppsSection from "./_components/Section/apps";
+import AboutSection from "./_components/Section/about";
 
 export default function Home() {
-  const twStayles = tv({
-    variants: {
-      style:{
-        text01:'text-cyan-400',
-      },
-    },
-  });
 
   return (
-    <div className={twStayles({style:'text01'})}>
-      first_commit
+    <div>
+      <HeroSection />
+      <NewsSection />
+      <AppsSection />
+      <AboutSection />
     </div>
   );
 }

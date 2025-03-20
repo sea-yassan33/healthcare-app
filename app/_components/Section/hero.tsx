@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { DumbbellIcon, Salad } from "lucide-react";
+import { Dumbbell, Salad } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -19,7 +19,7 @@ export default function HeroSection() {
           {/* 右カラム - テキスト */}
           <div className="flex flex-col items-start justify-center gap-6 px-4 lg:px-8">
             <Badge className="bg-white px-6 py-2 text-base font-medium uppercase tracking-wider">
-              <DumbbellIcon className="mr-2 h-4 w-4" />
+              <Dumbbell className="mr-2 h-4 w-4" />
               Exercise
               <span className="mx-2 text-pink-500">+</span>
               <Salad className="mr-2 h-4 w-4" />

@@ -1,5 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Heart, Salad, Dumbbell } from "lucide-react";
+import {Heart, Salad, Dumbbell } from "lucide-react";
+import { documents } from "@/app/_components/parts/document";
+import TopickList from "../TopickList";
 
 const newsItems = [
   {
@@ -23,16 +25,12 @@ const newsItems = [
     description: "少ない時間で最大の効果を得られる最新のトレーニング方法を紹介",
     category: "運動"
   },
-  {
-    icon: Brain,
-    date: "2024.03.18",
-    title: "メンタルヘルスケアの重要性",
-    description: "ストレス社会における精神衛生管理の新しいアプローチ",
-    category: "メンタルヘルス"
-  }
 ];
 
 export default function NewsSection() {
+  // updatedAtで新しい順に並び替え
+  const docmentData = documents.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+
   return (
     <section className="w-full bg-gray-50 py-20">
       {/* 健康情報一覧 */}
@@ -46,29 +44,7 @@ export default function NewsSection() {
           </p>
         </div>
         {/* News Cards */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {newsItems.map((item, index) => (
-            <Card key={index} className="overflow-hidden transition-all hover:shadow-lg">
-              <CardHeader className="space-y-1">
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
-                    {item.category}
-                  </span>
-                  <span className="text-sm text-gray-500">{item.date}</span>
-                </div>
-                <div className="flex h-12 items-center gap-2">
-                  <item.icon className="h-6 w-6 text-gray-900" />
-                  <CardTitle className="line-clamp-2 text-lg">{item.title}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="line-clamp-2">
-                  {item.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <TopickList documents={docmentData} num={4}/>
       </div>
       <hr className="mt-3 mb-3"/>
       <div className="container mx-auto px-4 mt-3">

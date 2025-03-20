@@ -26,6 +26,13 @@ npm install @heroicons/react
 ## ブラウザ依存のライブラリ
 ## https://qiita.com/KokiSakano/items/e3a42a12f5de3c9f88ea
 npm install framer-motion
+
+## youtube
+npm install react-youtube
+
+## mackdown
+npm install react-markdown remark-gfm
+npm install @tailwindcss/typography
 ```
 
 ## python

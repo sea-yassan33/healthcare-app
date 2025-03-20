@@ -1,4 +1,4 @@
-import workout_list from './workout_list.json';
+import workout_list from '@/public/data/workout_list.json';
 
 export interface Workout {
   id: number;

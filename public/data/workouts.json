@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "exercise": "スクワットで脚痩せ・美尻を目指そう！",
+    "sets": "10セット",
+    "reps": "10回",
+    "youtube_url": "u0jaIWcN7Ak"
+  },
+  {
+    "id": 2,
+    "exercise": "地獄のプランクサーキットで速攻お腹を引き締めよう！",
+    "sets": "１セット",
+    "reps": "３分間",
+    "youtube_url": "pBo_DjHqVws"
+  },
+  {
+    "id": 3,
+    "exercise": "マウンテンクライマー：有酸素運動＆筋トレ",
+    "sets": "3セット",
+    "reps": "30秒間",
+    "youtube_url": "IO_0KJfGiLg"
+  },
+  {
+    "id": 4,
+    "exercise": "カーフレイズ：ふくらはぎを鍛えよう",
+    "sets": "２セット",
+    "reps": "３０秒",
+    "youtube_url": "936AZbyQqEg"
+  },
+  {
+    "id": 5,
+    "exercise": "小顔になる小顔体操！",
+    "sets": "１セット",
+    "reps": "４分間",
+    "youtube_url": "Z55vs5CD9O8"
+  },
+  {
+    "id": 6,
+    "exercise": "胸筋のトレーニング：初心者向け6種目",
+    "sets": "６セット",
+    "reps": "10〜20秒間",
+    "youtube_url": "ceXBsw7w9lU"
+  },
+  {
+    "id": 7,
+    "exercise": "後ろ姿を美しく！背中の自重筋トレ",
+    "sets": "12セット",
+    "reps": "10〜20秒間",
+    "youtube_url": "geOACTwbNeg"
+  },
+  {
+    "id": 8,
+    "exercise": "ノリノリな音楽で腹筋を鍛える！",
+    "sets": "１セット",
+    "reps": "３分間",
+    "youtube_url": "fPlOQI3pt6k"
+  },
+  {
+    "id": 9,
+    "exercise": "尻エクササイズ!! ",
+    "sets": "1セット",
+    "reps": "5分間",
+    "youtube_url": "nlTJXBGr7Uc"
+  },
+  {
+    "id": 10,
+    "exercise": "飛ばないHIITトレーニング",
+    "sets": "１セット",
+    "reps": "４分間",
+    "youtube_url": "UZJOLmMDqu8"
+  }
+]

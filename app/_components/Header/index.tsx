@@ -9,32 +9,32 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 text-xl font-bold text-gray-900">
           <Heart className="h-6 w-6 text-pink-500" />
-          <span>HealthCare</span>
+          <span>HealthCare Infomation</span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
-          <Link href="/exercise" className="text-sm font-medium text-gray-600 hover:text-gray-900">
-            Exercise
+          <Link href="/" className="text-sm font-medium text-gray-600 hover:text-gray-900">
+            健康情報一覧
           </Link>
-          <Link href="/nutrition" className="text-sm font-medium text-gray-600 hover:text-gray-900">
-            Nutrition
+          <Link href="/" className="text-sm font-medium text-gray-600 hover:text-gray-900">
+            健康データ一覧
           </Link>
-          <Link href="/wellness" className="text-sm font-medium text-gray-600 hover:text-gray-900">
-            Wellness
+          <Link href="/" className="text-sm font-medium text-gray-600 hover:text-gray-900">
+            トレーニング紹介
           </Link>
-          <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-gray-900">
-            About
+          <Link href="/" className="text-sm font-medium text-gray-600 hover:text-gray-900">
+            AI支援ツール
           </Link>
         </nav>
 
         {/* Actions */}
         <div className="flex items-center gap-4">
           <Button variant="outline" className="hidden md:inline-flex">
-            Sign In
+            私たちについて
           </Button>
           <Button className="hidden bg-gray-900 text-white hover:bg-gray-800 md:inline-flex">
-            Get Started
+            問い合わせ
           </Button>
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="h-5 w-5" />

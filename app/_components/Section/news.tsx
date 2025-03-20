@@ -34,19 +34,55 @@ const newsItems = [
 
 export default function NewsSection() {
   return (
-    <section className="w-full bg-gray-50 py-24">
+    <section className="w-full bg-gray-50 py-20">
+      {/* 健康情報一覧 */}
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            最新情報
+            最新トピック情報
           </h2>
           <p className="text-lg text-gray-600">
-            健康・栄養・運動に関する最新のニュースをお届けします
+            運動・栄養に関する最新のニュースをお届けします
           </p>
         </div>
-
+        {/* News Cards */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {newsItems.map((item, index) => (
+            <Card key={index} className="overflow-hidden transition-all hover:shadow-lg">
+              <CardHeader className="space-y-1">
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800">
+                    {item.category}
+                  </span>
+                  <span className="text-sm text-gray-500">{item.date}</span>
+                </div>
+                <div className="flex h-12 items-center gap-2">
+                  <item.icon className="h-6 w-6 text-gray-900" />
+                  <CardTitle className="line-clamp-2 text-lg">{item.title}</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="line-clamp-2">
+                  {item.description}
+                </CardDescription>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+      <hr className="mt-3 mb-3"/>
+      <div className="container mx-auto px-4 mt-3">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            最新データ
+          </h2>
+          <p className="text-lg text-gray-600">
+            公共データの情報をお届けします
+          </p>
+        </div>
+        {/* News Cards */}
+        <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-2">
+          {newsItems.slice(0, 2).map((item, index) => (
             <Card key={index} className="overflow-hidden transition-all hover:shadow-lg">
               <CardHeader className="space-y-1">
                 <div className="flex items-center justify-between">

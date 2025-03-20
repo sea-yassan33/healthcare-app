@@ -5,22 +5,22 @@ const values = [
   {
     icon: Heart,
     title: "思いやりの心",
-    description: "患者様一人一人に寄り添い、最適な医療サービスを提供します。"
+    description: "個人のニーズに合わせたサービスを提供し、健康を支えます。"
   },
   {
     icon: Users,
-    title: "チームワーク",
-    description: "医療従事者と密接に連携し、包括的な医療サポートを実現します。"
+    title: "データ連携",
+    description: "医療・福祉データを元に、人々の健康を支えるサービスを提供します。"
   },
   {
     icon: Globe,
     title: "グローバルな視点",
-    description: "世界中の最新医療技術と知見を取り入れ、革新的なソリューションを提供します。"
+    description: "最新の技術と知見を取り入れ、革新的なソリューションを提供します。"
   },
   {
     icon: Sparkles,
     title: "革新への挑戦",
-    description: "最先端技術を活用し、医療の未来を切り開きます。"
+    description: "最先端技術を活用し、新しい挑戦に挑みます。"
   }
 ];
 
@@ -34,8 +34,8 @@ export default function AboutSection() {
           </h2>
           <p className="mb-8 text-xl leading-relaxed text-gray-600">
             すべての人々が健やかで幸せな生活を送れる社会の実現を目指して。
-            私たちは、最新のテクノロジーと確かな医療知識を組み合わせ、
-            一人一人に寄り添った医療サービスを提供することで、
+            私たちは、最新のテクノロジーと最新の健康に関する知見を組み合わせ、
+            一人一人に寄り添ったヘルスケアサービスを提供することで、
             人々の健康と笑顔を支えていきます。
           </p>
           <div className="mb-16">

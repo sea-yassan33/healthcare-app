@@ -11,21 +11,21 @@ const apps = [
   },
   {
     icon: Brain,
-    title: "AI評価",
-    description: "病院・クリニックで処方された当社のおくすりについて、患者さんとそのご家族向けにわかりやすく解説している検索サイトです。",
-    image: "https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=500",
+    title: "トレーニング情報",
+    description: "トレーニングの基本から応用まで、様々な情報を提供しています。",
+    image: "/img/home_app01.jpg",
   },
   {
     icon: Dumbbell,
-    title: "トレーニングサポート",
-    description: "公式YouTubeチャンネルです。糖尿病やパーキンソン病などの疾病に関する動画を掲載しています。",
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=500",
+    title: "AI支援ツール",
+    description: "AIを活用したヘルスケアプログラムを提供しています。",
+    image: "/img/home_app02.jpg",
   },
 ];
 
 export default function AppsSection() {
   return (
-    <section className="w-full bg-white py-24">
+    <section className="w-full bg-white py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

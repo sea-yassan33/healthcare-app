@@ -3,29 +3,29 @@ import Link from "next/link";
 
 const footerLinks = {
   company: {
-    title: "企業情報",
+    title: "サイトオーナー情報",
     links: [
-      { label: "会社概要", href: "/about" },
-      { label: "ミッション", href: "/mission" },
-      { label: "採用情報", href: "/careers" },
+      { label: "概要", href: "/" },
+      { label: "ミッション", href: "/" },
       { label: "ニュースリリース", href: "/news" }
     ]
   },
   service: {
     title: "サービス",
     links: [
-      { label: "健康情報一覧", href: "/health-info" },
-      { label: "AI評価", href: "/ai-assessment" },
-      { label: "トレーニングサポート", href: "/training" },
-      { label: "オンライン相談", href: "/consultation" }
+      { label: "健康情報一覧", href: "/" },
+      { label: "データ一覧", href: "/" },
+      { label: "トレーニングサポート", href: "/" },
+      { label: "AI支援ツール", href: "/" }
     ]
   },
   support: {
     title: "サポート",
     links: [
-      { label: "お問い合わせ", href: "/contact" },
-      { label: "よくある質問", href: "/faq" },
-      { label: "利用規約", href: "/terms" },
+      { label: "お問い合わせ", href: "/" },
+      { label: "よくある質問", href: "/" },
+      { label: "サイトマップ", href: "/" },
+      { label: "利用規約", href: "/" },
       { label: "プライバシーポリシー", href: "/privacy" }
     ]
   }
@@ -47,18 +47,15 @@ export default function Footer() {
               すべての人々の健康と笑顔をサポートします。
             </p>
           </div>
-
           {/* Footer Links */}
           {Object.values(footerLinks).map((section) => (
             <div key={section.title}>
               <h3 className="mb-4 font-semibold text-gray-900">{section.title}</h3>
               <ul className="space-y-2">
                 {section.links.map((link) => (
+                  // リンクタイトル毎に区切る
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-gray-600 transition-colors hover:text-gray-900"
-                    >
+                    <Link href={link.href} className="text-sm text-gray-600 transition-colors hover:text-gray-900">
                       {link.label}
                     </Link>
                   </li>
@@ -67,7 +64,6 @@ export default function Footer() {
             </div>
           ))}
         </div>
-
         {/* Bottom Bar */}
         <div className="mt-12 border-t pt-8">
           <div className="flex flex-col items-center justify-between gap-4 text-sm text-gray-600 md:flex-row">
@@ -75,7 +71,6 @@ export default function Footer() {
             <div className="flex gap-4">
               <Link href="/terms" className="hover:text-gray-900">利用規約</Link>
               <Link href="/privacy" className="hover:text-gray-900">プライバシーポリシー</Link>
-              <Link href="/sitemap" className="hover:text-gray-900">サイトマップ</Link>
             </div>
           </div>
         </div>

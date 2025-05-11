@@ -1,17 +1,33 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+# 関数
+def get_soup(url):
+  ## HRMLの取得
+  res = requests.get(url)
+  ## エンコーディングを適切に設定
+  res.encoding = res.apparent_encoding
+  ## BeautifulSoupでHTMLを解析
+  soup = BeautifulSoup(res.text, 'html.parser')
+  return soup
+def get_soup_target(url, classname):
+  ## HRMLの取得
+  res = requests.get(url)
+  ## エンコーディングを適切に設定
+  res.encoding = res.apparent_encoding
+  ## BeautifulSoupでHTMLを解析
+  soup = BeautifulSoup(res.text, 'html.parser')
+  target_soup = soup.find_all(class_=classname)
+  ## ターゲットのHTMLを取得
+  return target_soup[0]
 # 取得対象のURL
 url = "https://example.jp/open/data/"
-# HTMLを取得
-response = requests.get(url)
-# エンコーディングを適切に設定
-response.encoding = response.apparent_encoding
+className = "getClassName"
 # BeautifulSoupでパース
-soup = BeautifulSoup(response.text, "html.parser")
+soup = get_soup(url)
 # productItemImgのクラス名があるソースをリストに加える
-product_item = soup.find_all(class_="className")
-links = product_item[0].find_all("a")
+target_soup = get_soup_target(url, className)
+links = target_soup.find_all("a")
 data = []
 for link in links:
   ## imgタグ内のalt属性

@@ -38,15 +38,7 @@ export default function AboutSection() {
             一人一人に寄り添ったヘルスケアサービスを提供することで、
             人々の健康と笑顔を支えていきます。
           </p>
-          <div className="mb-16">
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-full border-2 border-blue-200 px-8 text-gray-700 hover:bg-blue-50"
-            >
-              詳しく見る
-            </Button>
-          </div>
+          
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -66,6 +58,15 @@ export default function AboutSection() {
               </p>
             </div>
           ))}
+        </div>
+        <div className="mx-auto max-w-3xl text-center mt-8">
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-full border-2 border-blue-200 px-8 text-gray-700 hover:bg-blue-50"
+            >
+              詳しく見る
+            </Button>
         </div>
       </div>
     </section>

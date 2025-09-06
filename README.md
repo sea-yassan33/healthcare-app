@@ -8,8 +8,9 @@
 - TailwindCSS
 - Python
 
-- [add_library](./Document/library.md)
+- [add_library](./Documen/設計書/2_内部設計/library.md)
 
 ## 設計書
 
-- [設計書目次](./Document/document_menu.md)
+- [外部設計書](./Document/設計書/1_外部設計/外部設計書.md)
+- [内部設計書](./Document/設計書/2_内部設計/内部設計書.md)

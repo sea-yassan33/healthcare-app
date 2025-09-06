@@ -3,30 +3,30 @@ import Link from "next/link";
 
 const footerLinks = {
   company: {
-    title: "サイトオーナー情報",
+    title: "ミッション情報",
     links: [
-      { label: "概要", href: "/" },
-      { label: "ミッション", href: "/" },
-      { label: "ニュースリリース", href: "/news" }
+      { label: "概要", href: "#" },
+      { label: "ミッション", href: "#" },
+      { label: "ニュースリリース", href: "#" },
+      { label: "よくある質問", href: "#" },
+      { label: "お問い合わせ", href: "#" },
     ]
   },
   service: {
     title: "サービス",
     links: [
-      { label: "健康情報一覧", href: "/" },
-      { label: "データ一覧", href: "/" },
-      { label: "トレーニングサポート", href: "/" },
-      { label: "AI支援ツール", href: "/" }
+      { label: "トピック一覧", href: "#" },
+      { label: "データ一覧", href: "#" },
+      { label: "トレーニングサポート", href: "#" },
+      { label: "AI支援ツール", href: "#" }
     ]
   },
   support: {
     title: "サポート",
     links: [
-      { label: "お問い合わせ", href: "/" },
-      { label: "よくある質問", href: "/" },
-      { label: "サイトマップ", href: "/" },
-      { label: "利用規約", href: "/" },
-      { label: "プライバシーポリシー", href: "/privacy" }
+      { label: "サイトマップ", href: "#" },
+      { label: "利用規約", href: "#" },
+      { label: "プライバシーポリシー", href: "#" }
     ]
   }
 };

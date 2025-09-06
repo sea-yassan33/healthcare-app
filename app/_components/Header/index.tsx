@@ -1,33 +1,31 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Menu } from "lucide-react";
+import { Menu, Heart } from "lucide-react";
 import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 text-xl font-bold text-gray-900">
-          <Heart className="h-6 w-6 text-pink-500" />
-          <span>HealthCare Infomation</span>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-8 md:flex">
-          <Link href="/" className="text-sm font-medium text-gray-600 hover:text-gray-900">
-            健康情報一覧
-          </Link>
-          <Link href="/" className="text-sm font-medium text-gray-600 hover:text-gray-900">
-            健康データ一覧
-          </Link>
-          <Link href="/" className="text-sm font-medium text-gray-600 hover:text-gray-900">
-            トレーニング紹介
-          </Link>
-          <Link href="/" className="text-sm font-medium text-gray-600 hover:text-gray-900">
-            AI支援ツール
-          </Link>
-        </nav>
-
+    <header className="sticky px-4 top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between">
+        <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2">
+            <Heart className="h-8 w-8 text-blue-600" />
+            <h1 className="text-xl font-semibold text-blue-900">HealthHub</h1>
+          </div>
+          <nav className="hidden md:flex items-center gap-6">
+            <Link href="/" className="text-sm hover:text-blue-600 transition-colors">
+              ホーム
+            </Link>
+            <Link href="#" className="text-sm hover:text-blue-600 transition-colors">
+              健康情報
+            </Link>
+            <Link href="#" className="text-sm hover:text-blue-600 transition-colors">
+              トレーニング情報
+            </Link>
+            <Link href="#" className="text-sm hover:text-blue-600 transition-colors">
+              AI支援ツール
+            </Link>
+          </nav>
+        </div>
         {/* Actions */}
         <div className="flex items-center gap-4">
           <Button variant="outline" className="hidden md:inline-flex">

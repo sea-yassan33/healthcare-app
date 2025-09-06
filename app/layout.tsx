@@ -15,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body>
+      <body className="min-h-screen bg-white">
         <Header/>
-        {children}
+          {children}
         <Footer/>
       </body>
     </html>

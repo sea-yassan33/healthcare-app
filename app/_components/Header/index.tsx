@@ -15,7 +15,7 @@ export default function Header() {
             <Link href="/" className="text-sm hover:text-blue-600 transition-colors">
               ホーム
             </Link>
-            <Link href="#" className="text-sm hover:text-blue-600 transition-colors">
+            <Link href="/health_info" className="text-sm hover:text-blue-600 transition-colors">
               健康情報
             </Link>
             <Link href="#" className="text-sm hover:text-blue-600 transition-colors">

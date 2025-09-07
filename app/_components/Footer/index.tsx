@@ -16,6 +16,7 @@ const footerLinks = {
     title: "サービス",
     links: [
       { label: "トピック一覧", href: "#" },
+      { label: "論文一覧", href: "#" },
       { label: "データ一覧", href: "#" },
       { label: "トレーニングサポート", href: "#" },
       { label: "AI支援ツール", href: "#" }

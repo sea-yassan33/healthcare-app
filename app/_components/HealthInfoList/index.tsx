@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
@@ -11,10 +12,10 @@ import healthinfo from "@/public/data/healthinfo.json";
 
 // 大項目：カテゴリー
 const categories = [
-  { label: "全て", value: "" },
-  { label: "トピック", value: "トピック" },
-  { label: "論文", value: "論文" },
-  { label: "データ紹介", value: "データ紹介" },
+  { label: "全て", value: 0 },
+  { label: "トピック", value: 1 },
+  { label: "論文", value: 2 },
+  { label: "データ紹介", value: 3 },
 ];
 
 // healtTagsからタグ名の配列を作成
@@ -23,7 +24,7 @@ const tags = healtTags.map(tag => tag.Tag);
 const healthInfos = healthinfo;
 
 export default function HealthInfoList() {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState<number>(0);
   const [search, setSearch] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
@@ -65,7 +66,7 @@ export default function HealthInfoList() {
                 variant={category === cat.value ? "default" : "outline"}
                 size="sm"
                 className={cn("rounded-full px-3", category === cat.value && " text-gray-100 bg-blue-600")}
-                onClick={() => setCategory(cat.value)}
+                onClick={() => setCategory(cat.value as number)}
                 >
                 {cat.label}
               </Button>
@@ -104,7 +105,10 @@ export default function HealthInfoList() {
         {filteredInfos.map(info => (
           <Card key={info.id} className="bg-muted/40">
             <CardHeader className="pb-2">
-              <Badge variant="secondary" className="rounded px-2 py-1 text-xs mb-2">{info.category}</Badge>
+              {/* カテゴリ値毎にカテゴリー名を出力 */}
+              {info.category === 1 && <Badge variant="secondary" className="rounded px-2 py-1 text-xs mb-2">トピック</Badge>}
+              {info.category === 2 && <Badge variant="secondary" className="rounded px-2 py-1 text-xs mb-2">論文</Badge>}
+              {info.category === 3 && <Badge variant="secondary" className="rounded px-2 py-1 text-xs mb-2">データ紹介</Badge>}
               <h2 className="text-lg font-semibold">{info.title}</h2>
             </CardHeader>
             <CardContent className="pb-2">
@@ -116,14 +120,13 @@ export default function HealthInfoList() {
               </div>
             </CardContent>
             <CardFooter className="flex items-center justify-between text-xs text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <span>{info.author}</span>
-                <span>・</span>
-                <span>{info.time}</span>
+              <div className="gap-2">
+                <span>記事投稿日：{info.date.split(" ")[0]}</span><br/>
               </div>
               <div className="flex items-center gap-2">
-                <span>{info.date}</span>
-                <Button variant="link" className="px-0 h-auto text-primary text-xs">詳しく見る</Button>
+                <Link href={info.url} target="_blank" rel="noopener noreferrer">
+                  <Button variant="link" className="px-0 h-auto text-primary text-xs">詳しく見る</Button>
+                </Link>
               </div>
             </CardFooter>
           </Card>

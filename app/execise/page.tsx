@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
-import { TodaysSessions } from '../_components/ExcisePage/todays-session';
+import { TodaysSessions } from '../../components/ExcisePage/todays-session';
 
 export default function ExecisePage() {
   const twStayles = tv({
@@ -26,11 +26,11 @@ export default function ExecisePage() {
       <section className={twStayles({style:'section02'})}>
         <h2 className={twStayles({style:'section02_h2'})}>MENU</h2>
         <div className={twStayles({style:'section02_inner'})}>
-          <Link href="#">
+          <Link href="/execise/muscle_tr">
             <Button className={twStayles({style:'section02_button'})} variant="outline">筋力トレーニング</Button>
           </Link>
           <Link href="#">
-            <Button className={twStayles({style:'section02_button'})} variant="outline">有酸素運動</Button>
+            <Button className={twStayles({style:'section02_button'})} variant="outline">有酸素トレーニング</Button>
           </Link>
           <Link href="#">
             <Button className={twStayles({style:'section02_button'})} variant="outline">トレーニングプログラム</Button>

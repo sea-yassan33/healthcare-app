@@ -1,28 +1,24 @@
 "use client";
 import { useMemo, useState } from "react";
-import Link from "next/link";
-import { ExternalLink, Search as SearchIcon, ChevronLeft, ChevronRight } from "lucide-react";
+import {Search as SearchIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { ExerciseModal } from "@/components/ExcisePage/excise-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import {Table,TableBody,TableCell,TableHead,TableHeader,TableRow,} from "@/components/ui/table";
-// モーダルに渡す詳細データ
-type ExerciseDetail = {
-  title: string;
-  videoUrl: string;
-  mainMuscle: string;
-  steps: string[];
-};
-// テーブル1行分の型
-type ExerciseRow = {
-  name: string;
-  muscleKey: MuscleKey;
-  muscleLabel: string; // 表示用（肩/背中/腕/胸/腹部）
-  mainMuscle?: string; // 例: 三角筋前部/中部/後部
-  videoUrl?: string;
-};
-type MuscleKey = "all" | "shoulder" | "back" | "arm" | "chest" | "abs";
+import { ExerciseRow, MuscleKey } from "@/lib/exercise/interfaceUtils";
+import muscle_json from "@/public/data/muscle_list.json";
+
+// モーダル用筋力トレデータ
+const exerciseDetails: { [id: number]: ExerciseRow } = muscle_json.reduce(
+  // idをキーにした連想配列に変換
+  (acc: { [id: number]: ExerciseRow }, row: ExerciseRow) => {
+    acc[row.id] = row;
+    return acc;
+  },
+  {}
+);
+// 筋肉部位タブの定義
 const MUSCLE_TABS: { key: MuscleKey; label: string }[] = [
   { key: "all", label: "すべて" },
   { key: "shoulder", label: "肩" },
@@ -30,92 +26,12 @@ const MUSCLE_TABS: { key: MuscleKey; label: string }[] = [
   { key: "arm", label: "腕" },
   { key: "chest", label: "胸" },
   { key: "abs", label: "腹部" },
+  { key: "hip", label: "臀部" },
+  { key: "thigh", label: "大腿部" },
+  { key: "leg", label: "下腿部" },
 ];
-// 参考動画や手順をモーダル用に定義（必要分だけ）
-const exerciseDetails: Record<string, ExerciseDetail> = {
-  "フロントレイズ": {
-    title: "フロントレイズ｜三角筋前部",
-    videoUrl: "https://www.youtube.com/embed/55HUwh5Oy8A",
-    mainMuscle: "三角筋前部",
-    steps: [
-      "両手にダンベルを持つ",
-      "腕を前方にまっすぐ上げる",
-      "肩の高さまで持ち上げてゆっくり下ろす",
-    ],
-  },
-  "パイクプッシュアップ": {
-    title: "パイクプッシュアップ｜三角筋前部",
-    videoUrl: "https://www.youtube.com/embed/qkHj1V9rR3M",
-    mainMuscle: "三角筋前部",
-    steps: [
-      "臀部を高く上げV字姿勢を作る",
-      "肘を曲げて頭を床へ近づける",
-      "肩周りを意識して押し上げる",
-    ],
-  },
-  "ダンベルサイドレイズ": {
-    title: "ダンベルサイドレイズ｜三角筋中部",
-    videoUrl: "https://www.youtube.com/embed/3VcKaXpzqRo",
-    mainMuscle: "三角筋中部",
-    steps: [
-      "両手にダンベルを持ち体側に下げる",
-      "肘を軽く曲げたまま横に持ち上げる",
-      "肩の高さで止めゆっくり下ろす",
-    ],
-  },
-  "ダンベルショルダープレス": {
-    title: "ダンベルショルダープレス｜三角筋中部",
-    videoUrl: "https://www.youtube.com/embed/8QZ-mq6LwqE",
-    mainMuscle: "三角筋中部",
-    steps: [
-      "ダンベルを肩の高さに構える",
-      "肘を伸ばして頭上に押し上げる",
-      "コントロールしながら下ろす",
-    ],
-  },
-  "ダンベルアップライトロウ": {
-    title: "ダンベルアップライトロウ｜三角筋中部・僧帽筋",
-    videoUrl: "https://www.youtube.com/embed/EXF2XAlkqL0",
-    mainMuscle: "三角筋中部・僧帽筋",
-    steps: [
-      "両手にダンベルを持ち太もも前に構える",
-      "肘を外に張りながら胸の高さまで引き上げる",
-      "ゆっくり下ろす",
-    ],
-  },
-  "リアレイズ": {
-    title: "リアレイズ｜三角筋後部",
-    videoUrl: "https://www.youtube.com/embed/TN1hG9n3Gf4",
-    mainMuscle: "三角筋後部",
-    steps: [
-      "前傾姿勢をとりダンベルを両手に持つ",
-      "肩甲骨を寄せる意識で横に開く",
-      "コントロールして下ろす",
-    ],
-  },
-};
-
 // テーブルに表示するデータ（必要に応じて拡張可能）
-const ALL_EXERCISES: ExerciseRow[] = [
-  // 肩：三角筋前部
-  { name: "フロントレイズ", muscleKey: "shoulder", muscleLabel: "肩", mainMuscle: "三角筋前部", videoUrl: exerciseDetails["フロントレイズ"]?.videoUrl },
-  { name: "パイクプッシュアップ", muscleKey: "shoulder", muscleLabel: "肩", mainMuscle: "三角筋前部", videoUrl: exerciseDetails["パイクプッシュアップ"]?.videoUrl },
-  // 肩：三角筋中部
-  { name: "ダンベルサイドレイズ", muscleKey: "shoulder", muscleLabel: "肩", mainMuscle: "三角筋中部", videoUrl: exerciseDetails["ダンベルサイドレイズ"]?.videoUrl },
-  { name: "ダンベルショルダープレス", muscleKey: "shoulder", muscleLabel: "肩", mainMuscle: "三角筋中部", videoUrl: exerciseDetails["ダンベルショルダープレス"]?.videoUrl },
-  { name: "ダンベルアップライトロウ", muscleKey: "shoulder", muscleLabel: "肩", mainMuscle: "三角筋中部", videoUrl: exerciseDetails["ダンベルアップライトロウ"]?.videoUrl },
-  // 肩：三角筋後部
-  { name: "リアレイズ", muscleKey: "shoulder", muscleLabel: "肩", mainMuscle: "三角筋後部", videoUrl: exerciseDetails["リアレイズ"]?.videoUrl },
-  // サンプルとして他部位にダミーを少し用意（モーダルは「準備中」表示にする）
-  { name: "ベントオーバーロウ", muscleKey: "back", muscleLabel: "背中", mainMuscle: "広背筋", videoUrl: "https://www.youtube.com/embed/pYcpY20QaE8" },
-  { name: "プルアップ", muscleKey: "back", muscleLabel: "背中", mainMuscle: "広背筋", videoUrl: "https://www.youtube.com/embed/eGo4IYlbE5g" },
-  { name: "アームカール", muscleKey: "arm", muscleLabel: "腕", mainMuscle: "上腕二頭筋", videoUrl: "https://www.youtube.com/embed/ykJmrZ5v0Oo" },
-  { name: "トライセプスエクステンション", muscleKey: "arm", muscleLabel: "腕", mainMuscle: "上腕三頭筋", videoUrl: "https://www.youtube.com/embed/2-LAMcpzODU" },
-  { name: "ベンチプレス", muscleKey: "chest", muscleLabel: "胸", mainMuscle: "大胸筋", videoUrl: "https://www.youtube.com/embed/rT7DgCr-3pg" },
-  { name: "プッシュアップ", muscleKey: "chest", muscleLabel: "胸", mainMuscle: "大胸筋", videoUrl: "https://www.youtube.com/embed/IODxDxX7oi4" },
-  { name: "クランチ", muscleKey: "abs", muscleLabel: "腹部", mainMuscle: "腹直筋", videoUrl: "https://www.youtube.com/embed/MKmrqcoCZ-M" },
-  { name: "レッグレイズ", muscleKey: "abs", muscleLabel: "腹部", mainMuscle: "下腹部", videoUrl: "https://www.youtube.com/embed/JB2oyawG9KI" },
-];
+const ALL_EXERCISES: ExerciseRow[] = muscle_json
 // 1ページあたりの行数
 const PAGE_SIZE = 10;
 // メインコンポーネント
@@ -123,7 +39,7 @@ export default function Sample18Table() {
   const [selectedMuscle, setSelectedMuscle] = useState<MuscleKey>("all");
   const [search, setSearch] = useState<string>("");
   const [page, setPage] = useState<number>(1);
-  const [selectedExerciseName, setSelectedExerciseName] = useState<string | null>(null);
+  const [selectedExerciseId, setSelectedExerciseId] = useState<number | null>(null);
   // フィルタリング
   const filtered = useMemo(() => {
     // 部位で絞り込み
@@ -152,10 +68,10 @@ export default function Sample18Table() {
     setPage(1);
   };
   // モーダル制御
-  const openModal = (name: string) => {
-    setSelectedExerciseName(name);
+  const openModal = (id: number) => {
+    setSelectedExerciseId(id);
   };
-  const closeModal = () => setSelectedExerciseName(null);
+  const closeModal = () => setSelectedExerciseId(null);
   return (
     <main className="p-6 md:p-8 space-y-6">
       <div className="flex flex-col gap-3">
@@ -200,8 +116,7 @@ export default function Sample18Table() {
             <TableRow>
               <TableHead className="w-[35%]">種目</TableHead>
               <TableHead className="w-[30%]">部位</TableHead>
-              <TableHead className="w-[30%]">サブ部位/カテゴリー</TableHead>
-              <TableHead className="w-[5%]">詳細記事</TableHead>
+              <TableHead className="w-[35%]">主動筋</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -217,7 +132,7 @@ export default function Sample18Table() {
                   <TableCell className="align-top">
                     <button
                       type="button"
-                      onClick={() => openModal(row.name)}
+                      onClick={() => openModal(row.id)}
                       className="text-sky-600 hover:underline font-medium"
                     >
                       {row.name}
@@ -233,21 +148,6 @@ export default function Sample18Table() {
                       <Badge variant="outline" className="rounded-md">
                         {row.mainMuscle}
                       </Badge>
-                    ) : (
-                      <span className="text-muted-foreground">—</span>
-                    )}
-                  </TableCell>
-                  <TableCell className="align-top">
-                    {row.videoUrl ? (
-                      <Link
-                        href={row.videoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sky-600 hover:underline"
-                      >
-                        more...
-                        <ExternalLink className="h-4 w-4" />
-                      </Link>
                     ) : (
                       <span className="text-muted-foreground">—</span>
                     )}
@@ -316,18 +216,8 @@ export default function Sample18Table() {
 
       {/* モーダル表示（指定のコンポーネントを利用） */}
       <ExerciseModal
-        exercise={
-          selectedExerciseName
-            ? exerciseDetails[selectedExerciseName] ?? {
-                // 万一詳細未定義の種目を開いた場合でもデザインが崩れないように最低限のデータを渡す
-                title: `${selectedExerciseName}（準備中）`,
-                videoUrl: "",
-                mainMuscle: "",
-                steps: ["準備中です。少々お待ちください。"],
-              }
-            : null
-        }
-        open={!!selectedExerciseName}
+        exercise={ selectedExerciseId ? exerciseDetails[selectedExerciseId] : null }
+        open={!!selectedExerciseId}
         onClose={closeModal}
       />
     </main>

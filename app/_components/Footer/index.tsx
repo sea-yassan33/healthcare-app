@@ -1,6 +1,6 @@
 import { Heart } from "lucide-react";
 import Link from "next/link";
-
+// フッターのリンクデータ
 const footerLinks = {
   company: {
     title: "ミッション情報",
@@ -31,8 +31,10 @@ const footerLinks = {
     ]
   }
 };
-
+// フッターコンポーネント
 export default function Footer() {
+  // 年を動的に取得
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="border-t bg-white">
       <div className="container mx-auto px-4 py-12">
@@ -68,7 +70,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 border-t pt-8">
           <div className="flex flex-col items-center justify-between gap-4 text-sm text-gray-600 md:flex-row">
-            <p>© 2024 HealthCare, Inc. All rights reserved.</p>
+            <p>© {currentYear} HealthHub, Inc. All rights reserved.</p>
             <div className="flex gap-4">
               <Link href="/terms" className="hover:text-gray-900">利用規約</Link>
               <Link href="/privacy" className="hover:text-gray-900">プライバシーポリシー</Link>

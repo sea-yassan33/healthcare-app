@@ -23,10 +23,10 @@ export default function Header() {
     <header className={twStayles({style:'header_top'})}>
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Heart className="h-8 w-8 text-blue-600" />
             <h1 className="text-xl font-semibold text-blue-900">HealthHub</h1>
-          </div>
+          </Link>
           <nav className="hidden md:flex items-center gap-6" aria-label="メインメニュー">
             <Link href="/" className={twStayles({style:'header_nav'})}>
               ホーム

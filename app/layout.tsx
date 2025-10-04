@@ -1,11 +1,34 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import "./globals.css";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 
 export const metadata: Metadata = {
-  title: "Health Hub | 健康アプリ",
-  description: "健康情報を提供するWEBアプリケーションです。最新のテクノロジーと最新の健康に関する知見を組み合わせて、健康情報を提供します。",
+  title: 'Health Hub | 健康アプリで運動・栄養をサポート',
+  description: 'HealthHub – AI を活用したトレーニング情報・健康情報を発信。初心者から上級者まで、運動・栄養・健康管理をサポートする情報を提供します。',
+  keywords: ['健康', 'ヘルスケア', '運動', '栄養', 'AI', '健康管理', 'トレーニング'],
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    url: 'https://healthcare-app-seven.vercel.app/',
+    siteName: 'HealthHub',
+    title: 'HealthHub｜AI支援健康アプリで運動・栄養をサポート',
+    description: 'AI を活用したトレーニング情報・健康情報を発信／運動・栄養・健康管理をサポートする情報サイト',
+    images: [
+      {
+        url: '/icon.png',
+        width: 800,
+        height: 600,
+        alt: 'HealthHub',
+      },  
+      {
+        url: '/icon.png',
+        width: 1800,
+        height: 1600,
+        alt: 'HealthHub',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

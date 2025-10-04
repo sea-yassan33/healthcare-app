@@ -40,8 +40,8 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 text-xl font-bold text-gray-900">
-              <Heart className="h-6 w-6 text-pink-500" />
-              <span>HealthCare</span>
+              <Heart className="h-6 w-6 text-blue-600" />
+              <span>HealthHub</span>
             </Link>
             <p className="text-sm text-gray-600">
               最新のテクノロジーと確かな医療知識で、

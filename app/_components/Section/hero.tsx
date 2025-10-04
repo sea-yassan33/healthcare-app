@@ -1,23 +1,24 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dumbbell, Salad } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-green-100 via-cyan-100 to-blue-200">
+    <section className="relative w-full h-full lg:py-24 overflow-hidden bg-gradient-to-br from-green-100 via-cyan-100 to-blue-200">
       {/* Decorative background blob */}
       <div className="absolute left-[10%] top-[20%] h-[500px] w-[500px] rounded-[40%] bg-cyan-200/30 blur-3xl" />
-      <div className="container relative mx-auto flex min-h-screen items-center px-4 py-18">
+      <div className="container relative mx-auto flex items-center px-4 py-8">
         <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-2">
           {/* 左カラム - 画像 */}
           <div className="relative">
             <div className="absolute -left-4 top-4 h-4 w-4 animate-[ping_2s_infinite] rounded-full bg-white" />
             <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem]">
-              <img src="/img/hero01.png" alt="Dumbbells with fruits" className="h-full w-full object-cover"/>
+              <Image src="/img/hero01.png" alt="Hero_img" className="h-full w-full object-cover" height={300} width={300}/>
             </div>
           </div>
           {/* 右カラム - テキスト */}
-          <div className="flex flex-col items-start justify-center gap-6 px-4 lg:px-8">
+          <div className="flex flex-col items-start justify-center gap-6 px-4 lg:px-24">
             <Badge className="bg-white px-6 py-2 text-base font-medium uppercase tracking-wider">
               <Dumbbell className="mr-2 h-4 w-4" />
               Exercise

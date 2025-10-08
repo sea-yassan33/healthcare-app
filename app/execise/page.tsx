@@ -29,7 +29,7 @@ export default function ExecisePage() {
           <Link href="/execise/muscle_tr">
             <Button className={twStayles({style:'section02_button'})} variant="outline">筋力トレーニング</Button>
           </Link>
-          <Link href="#">
+          <Link href="/execise/earobic_tr">
             <Button className={twStayles({style:'section02_button'})} variant="outline">有酸素トレーニング</Button>
           </Link>
           <Link href="#">

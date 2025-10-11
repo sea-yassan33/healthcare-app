@@ -3,6 +3,7 @@ import HeroSection from "./_components/Section/hero";
 import NewsSection from "./_components/Section/news";
 import AppsSection from "./_components/Section/apps";
 import AboutSection from "./_components/Section/about";
+import { JsonLd } from '@/components/Untils/JsonLd';
 
 export const metadata: Metadata = {
   robots: {
@@ -24,6 +25,7 @@ export default function Home() {
         <AppsSection />
         <AboutSection />
       </main>
+      <JsonLd />
     </>
   );
 }

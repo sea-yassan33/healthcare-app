@@ -30,6 +30,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+    robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://healthcare-app-seven.vercel.app/',
+  },
 };
 
 export default function RootLayout({

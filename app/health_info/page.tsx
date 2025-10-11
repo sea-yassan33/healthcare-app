@@ -1,5 +1,5 @@
 import {Heart} from "lucide-react";
-import HealthInfoList from "../_components/HealthInfoList";
+import HealthInfoList from "../../components/HealthInfo/health_info_list";
 export default function HealthInfo() {
   return (
     <main className="max-w-6xl mx-auto py-8 px-4">

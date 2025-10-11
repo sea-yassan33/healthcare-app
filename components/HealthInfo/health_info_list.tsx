@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Filter } from "lucide-react";
-import { healtTags } from "../parts/helth_info_tag";
+import { healtTags } from "../../lib/parts/helth_info_tag";
 import healthinfo from "@/public/data/healthinfo.json";
 
 // 大項目：カテゴリー

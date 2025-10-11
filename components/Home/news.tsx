@@ -1,7 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {Heart, Salad, Dumbbell } from "lucide-react";
-import { documents } from "@/app/_components/parts/document";
-import TopickList from "../TopickList";
+import ArticlList from "@/components/Home/article_list";
 
 const newsItems = [
   {
@@ -28,32 +27,20 @@ const newsItems = [
 ];
 
 export default function NewsSection() {
-  // updatedAtで新しい順に並び替え
-  const docmentData = documents.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
 
   return (
     <section className="w-full bg-gray-50 py-20">
       {/* 健康情報一覧 */}
-      <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            最新トピック情報
-          </h2>
-          <p className="text-lg text-gray-600">
-            運動・栄養に関する最新のニュースをお届けします
-          </p>
-        </div>
-        {/* News Cards */}
-        <TopickList documents={docmentData} num={4}/>
-      </div>
+      <ArticlList />
       <hr className="mt-3 mb-3"/>
+      {/* 最新データ一覧 */}
       <div className="container mx-auto px-4 mt-3">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             最新データ
           </h2>
           <p className="text-lg text-gray-600">
-            公共データの情報をお届けします
+            調査データの情報をお届けします
           </p>
         </div>
         {/* News Cards */}

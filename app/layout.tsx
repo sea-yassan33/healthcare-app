@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import "./globals.css";
-import Header from "./_components/Header";
-import Footer from "./_components/Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { Gtag } from '@/components/Untils/gtag';
 
 export const metadata: Metadata = {

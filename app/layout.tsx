@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Health Hub|健康アプリで運動・栄養をサポート',
   description: 'Health Hub|AI を活用したトレーニング情報・健康情報を発信。初心者から上級者まで、運動・栄養・健康管理をサポートする情報を提供します。',
   keywords: ['健康', 'ヘルスケア', '運動', '栄養', 'AI', '健康管理', 'トレーニング'],
+  verification: {
+    google: "IwOtXLvZZyGTORVWA8hCGYB4Lco2l8N1hJ5qs5G9KXM",
+  },
   openGraph: {
     type: 'website',
     locale: 'ja_JP',

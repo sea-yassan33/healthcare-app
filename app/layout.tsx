@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import "./globals.css";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
+import { Gtag } from '@/components/Untils/gtag';
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://healthcare-app-seven.vercel.app/"),
@@ -53,6 +54,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.png" type="image/x-icon" sizes="16x16" />
         <link rel="apple-touch-icon" sizes="180x180" href="/icon.png" />
         <link rel="manifest" href="/manifest.json" />
+        <Gtag />
       </head>
       <body className="min-h-screen bg-white">
         <Header/>

@@ -34,7 +34,7 @@ export default function Header() {
             <Link href="/health_info" className={twStayles({style:'header_nav'})}>
               健康情報
             </Link>
-            <Link href="/execise" className={twStayles({style:'header_nav'})}>
+            <Link href="/excise" className={twStayles({style:'header_nav'})}>
               トレーニング情報
             </Link>
             <Link href="#" className={twStayles({style:'header_nav'})}>
@@ -74,7 +74,7 @@ export default function Header() {
             <Link href="/health_info" className={twStayles({style:'hum_link'})} onClick={closeMenu}>
               健康情報
             </Link>
-            <Link href="/execise" className={twStayles({style:'hum_link'})} onClick={closeMenu}>
+            <Link href="/excise" className={twStayles({style:'hum_link'})} onClick={closeMenu}>
               トレーニング情報
             </Link>
             <Link href="#" className={twStayles({style:'hum_link'})} onClick={closeMenu}>

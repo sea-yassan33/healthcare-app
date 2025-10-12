@@ -15,7 +15,7 @@ const apps = [
     icon: Dumbbell,
     title: "トレーニング情報",
     description: "トレーニングの基本から応用まで、様々な情報を提供しています。",
-    link: "/execise/",
+    link: "/excise/",
     image: "/img/home_app01.jpg",
   },
   {

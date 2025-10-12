@@ -18,7 +18,7 @@ const categories = [
   { label: "データ", value: 3 },
 ];
 
-// 健康情報一覧（トピック、論文、データ含む：最新順）
+// 健康情報一覧（トピック、記事、データ含む：最新順）
 const NEWS_TOPICS: HealthcareInfoRow[] = healthinfo.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
 export default function HealthInfoList() {
@@ -81,8 +81,8 @@ export default function HealthInfoList() {
             <CardHeader className="pb-2">
               {/* カテゴリ値毎にカテゴリー名を出力 */}
               {info.category === 1 && <Badge variant="secondary" className="rounded px-2 py-1 text-xs mb-2">トピック</Badge>}
-              {info.category === 2 && <Badge variant="secondary" className="rounded px-2 py-1 text-xs mb-2">論文</Badge>}
-              {info.category === 3 && <Badge variant="secondary" className="rounded px-2 py-1 text-xs mb-2">データ紹介</Badge>}
+              {info.category === 2 && <Badge variant="secondary" className="rounded px-2 py-1 text-xs mb-2">記事</Badge>}
+              {info.category === 3 && <Badge variant="secondary" className="rounded px-2 py-1 text-xs mb-2">データ</Badge>}
               <h2 className="text-lg font-semibold">{info.title}</h2>
             </CardHeader>
             <CardContent className="pb-2">

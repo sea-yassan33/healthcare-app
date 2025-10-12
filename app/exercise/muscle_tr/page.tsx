@@ -1,4 +1,4 @@
-import MuscleContent from "@/components/ExcisePage/MuscleTr";
+import MuscleContent from "@/components/ExercisePage/MuscleTr";
 import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Health Hub | 筋力トレーニング',
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
-    url: 'https://healthcare-app-seven.vercel.app/excise/muscle_tr',
+    url: 'https://healthcare-app-seven.vercel.app/exercise/muscle_tr',
     siteName: 'HealthHub',
     title: 'HealthHub | 筋力トレーニングリスト',
     description: 'HealthHub | 筋力トレーニングリストです。自宅でできる筋力トレーニングリストを作成しました。基本的に道具なしで手軽にできる運動を中心に紹介しています。',

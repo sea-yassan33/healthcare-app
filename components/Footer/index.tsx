@@ -18,7 +18,7 @@ const footerLinks = {
       { label: "トピック一覧", href: "#" },
       { label: "論文一覧", href: "#" },
       { label: "データ一覧", href: "#" },
-      { label: "トレーニング情報", href: "/excise/" },
+      { label: "トレーニング情報", href: "/exercise/" },
       { label: "AI支援ツール", href: "#" }
     ]
   },

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import EarobicHero from '@/components/ExcisePage/Earobic/earobic-hero';
-import EarobicList from '@/components/ExcisePage/Earobic/earobic-list';
+import EarobicHero from '@/components/ExercisePage/Earobic/earobic-hero';
+import EarobicList from '@/components/ExercisePage/Earobic/earobic-list';
 export const metadata: Metadata = {
   title: 'Health Hub | 有酸素運動リスト',
   description: 'HealthHub | 有酸素運動リストです。無理なく続けられる運動を見つけましょう。',
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
-    url: 'https://healthcare-app-seven.vercel.app/excise/earobic_tr',
+    url: 'https://healthcare-app-seven.vercel.app/exercise/earobic_tr',
     siteName: 'HealthHub',
     title: 'HealthHub | 有酸素運動リスト',
     description: 'HealthHub | 有酸素運動リストです。無理なく続けられる運動を見つけましょう。',

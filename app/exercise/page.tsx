@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
-import { TodaysSessions } from '../../components/ExcisePage/todays-session';
+import { TodaysSessions } from '@/components/ExercisePage/todays-session';
 import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Health Hub | トレーニング情報',
@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
-    url: 'https://healthcare-app-seven.vercel.app/',
+    url: 'https://healthcare-app-seven.vercel.app/exercise',
     siteName: 'HealthHub',
     title: 'HealthHub | トレーニング情報',
     description: '筋力トレーニング、有酸素トレーニング、トレーニングプログラムなど様々なプログラムを提供しています。こちらを参考に独自のプログラムを作成して実践してみてください。',
   },
 };
-export default function ExecisePage() {
+export default function ExercisePage() {
   const twStayles = tv({
     variants: {
       style:{
@@ -39,10 +39,10 @@ export default function ExecisePage() {
       <section className={twStayles({style:'section02'})}>
         <h2 className={twStayles({style:'section02_h2'})}>MENU</h2>
         <div className={twStayles({style:'section02_inner'})}>
-          <Link href="/execise/muscle_tr">
+          <Link href="/exercise/muscle_tr">
             <Button className={twStayles({style:'section02_button'})} variant="outline">筋力トレーニング</Button>
           </Link>
-          <Link href="/execise/earobic_tr">
+          <Link href="/exercise/earobic_tr">
             <Button className={twStayles({style:'section02_button'})} variant="outline">有酸素トレーニング</Button>
           </Link>
           <Link href="#">

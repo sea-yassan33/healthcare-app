@@ -7,26 +7,22 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Filter } from "lucide-react";
-import { healtTags } from "../../lib/parts/helth_info_tag";
 import healthinfo from "@/public/data/healthinfo.json";
 
 // 大項目：カテゴリー
 const categories = [
   { label: "全て", value: 0 },
   { label: "トピック", value: 1 },
-  { label: "論文", value: 2 },
-  { label: "データ紹介", value: 3 },
+  { label: "記事", value: 2 },
+  { label: "データ", value: 3 },
 ];
 
-// healtTagsからタグ名の配列を作成
-const tags = healtTags.map(tag => tag.Tag);
 // 健康情報一覧（トピック、論文、データ含む：最新順）
 const healthInfos = healthinfo;
 
 export default function HealthInfoList() {
   const [category, setCategory] = useState<number>(0);
   const [search, setSearch] = useState("");
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   // フィルタリング
   const filteredInfos = healthInfos.filter(info => {
@@ -36,10 +32,7 @@ export default function HealthInfoList() {
       info.title.includes(search) ||
       info.description.includes(search) ||
       info.tags.some(tag => tag.includes(search));
-    const matchTags =
-      selectedTags.length === 0 ||
-      selectedTags.every(tag => info.tags.includes(tag));
-    return matchCategory && matchSearch && matchTags;
+    return matchCategory && matchSearch;
   });
 
   return (
@@ -70,26 +63,6 @@ export default function HealthInfoList() {
                 >
                 {cat.label}
               </Button>
-            ))}
-          </div>
-        </div>
-        {/* タグ */}
-        <div>
-          <span className="text-sm font-medium">タグ別フィルター:</span>
-          <div className="flex flex-wrap gap-2 mt-2">
-            {tags.map(tag => (
-              <Badge
-                key={tag}
-                variant={selectedTags.includes(tag) ? "default" : "secondary"}
-                className={cn("cursor-pointer rounded-full px-3 py-1 text-sm", selectedTags.includes(tag) && " text-gray-100 bg-blue-600")}
-                onClick={() =>
-                  setSelectedTags(selectedTags.includes(tag)
-                    ? selectedTags.filter(t => t !== tag)
-                    : [...selectedTags, tag])
-                }
-              >
-                {tag}
-              </Badge>
             ))}
           </div>
         </div>

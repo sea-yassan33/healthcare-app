@@ -15,7 +15,7 @@ export default function ArticlList(){
         </p>
       </div>
       {/* News Cards */}
-      <TopickList documents={docmentData} num={4}/>
+      <TopickList documents={docmentData} num={4} />
     </div>
   )
 }

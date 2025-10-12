@@ -2,7 +2,20 @@ import { tv } from 'tailwind-variants';
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { TodaysSessions } from '../../components/ExcisePage/todays-session';
-
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: 'Health Hub | トレーニング情報',
+  description: 'HealthHub | 筋力トレーニング、有酸素トレーニング、トレーニングプログラムなど様々なプログラムを提供しています。こちらを参考に独自のプログラムを作成して実践してみてください。',
+  keywords: ['健康', 'ヘルスケア', '運動', '栄養', 'AI', '健康管理', 'トレーニング'],
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    url: 'https://healthcare-app-seven.vercel.app/',
+    siteName: 'HealthHub',
+    title: 'HealthHub | トレーニング情報',
+    description: '筋力トレーニング、有酸素トレーニング、トレーニングプログラムなど様々なプログラムを提供しています。こちらを参考に独自のプログラムを作成して実践してみてください。',
+  },
+};
 export default function ExecisePage() {
   const twStayles = tv({
     variants: {

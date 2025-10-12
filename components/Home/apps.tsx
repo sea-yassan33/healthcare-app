@@ -21,7 +21,7 @@ const apps = [
   {
     icon: Brain,
     title: "AI支援ツール",
-    description: "AIを活用したヘルスケアプログラムを提供しています。",
+    description: "【コンテンツ制作中】",
     link: "#",
     image: "/img/home_app02.jpg",
   },

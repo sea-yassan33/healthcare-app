@@ -1,65 +1,33 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, FileText, Briefcase, DollarSign, Layout, Settings } from "lucide-react";
+import { Fish, BicepsFlexed, HeartIcon } from "lucide-react";
+import json_hci_docment from "@/public/data/document.json";
+import { HCIDocument } from "@/lib/healthcareInfo/interfaceutils";
+import Link from "next/link";
 
-const features = [
-  {
-    icon: <Shield className="h-6 w-6 text-blue-500" />,
-    title: "Marketing",
-    description:
-      "Plan it, create it, launch it. Collaborate seamlessly with all the organization and hit your marketing goals every month with our marketing plan.",
-  },
-  {
-    icon: <FileText className="h-6 w-6 text-blue-500" />,
-    title: "Legal",
-    description:
-      "Protect your organization, devices and stay compliant with our structured workflows and custom permissions made for you.",
-  },
-  {
-    icon: <Briefcase className="h-6 w-6 text-blue-500" />,
-    title: "Business Automation",
-    description:
-      "Auto-assign tasks, send Slack messages, and much more. Now power up with hundreds of new templates to help you get started.",
-  },
-  {
-    icon: <DollarSign className="h-6 w-6 text-blue-500" />,
-    title: "Finance",
-    description:
-      "Audit-proof software built for critical financial operations like month-end close and quarterly budgeting.",
-  },
-  {
-    icon: <Layout className="h-6 w-6 text-blue-500" />,
-    title: "Enterprise Design",
-    description:
-      "Craft beautiful, delightful experiences for both marketing and product with real cross-company collaboration.",
-  },
-  {
-    icon: <Settings className="h-6 w-6 text-blue-500" />,
-    title: "Operations",
-    description:
-      "Keep your company’s lights on with customizable, iterative, and structured workflows built for all efficient teams and individual.",
-  },
-];
+const HCI_DATA : HCIDocument[] = json_hci_docment; 
 
 export default function ArticleList() {
   return (
     <section className="py-16 px-4 max-w-7xl mx-auto text-center">
-      <h2 className="text-2xl md:text-3xl font-semibold mb-2">Secure platform, secure data</h2>
+      <h2 className="text-2xl md:text-3xl font-semibold mb-2">健康記事一覧</h2>
       <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-        Here at Flowbite we focus on markets where technology, innovation, and capital
-        can unlock long-term value and drive economic growth.
+        This is a list of health articles. The content is independently researched from various sources. Article details are displayed in Markdown format.
       </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {features.map((feature, index) => (
-          <Card key={index} className="text-left shadow-sm border border-gray-200 hover:shadow-md transition">
-            <CardHeader>
-              <div className="mb-3">{feature.icon}</div>
-              <CardTitle className="text-lg font-semibold">{feature.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
-            </CardContent>
-          </Card>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {HCI_DATA.map((data, index) => (
+          <Link href={`/health_info/article/${data.id}`} key={index} className="no-underline">
+            <Card className="text-left shadow-sm border border-gray-200 hover:shadow-md transition">
+              <CardHeader>
+                {data.category === "運動" && <BicepsFlexed className="h-6 w-6 text-black mb-2" />} 
+                {data.category === "栄養" && <Fish className="h-6 w-6 text-orange-400 mb-2" />} 
+                {data.category === "健康" && <HeartIcon className="h-6 w-6 text-pink-400 mb-2" />} 
+                <CardTitle className="text-lg font-semibold">{data.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 text-wrap min-h-[2.5rem]">{data.description}</p>
+              </CardContent>
+            </Card>
+          </Link>
         ))}
       </div>
     </section>

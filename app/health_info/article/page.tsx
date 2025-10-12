@@ -1,5 +1,5 @@
-import { tv } from 'tailwind-variants';
 import type { Metadata } from 'next';
+import ArticleList from '@/components/HealthInfo/Article/article_list';
 export const metadata: Metadata = {
   title: 'Health Hub | 健康記事一覧',
   description: 'HealthHub | 独自に調査した健康に関する記事の一覧になります。公平な視点で情報を提供しています。',
@@ -13,17 +13,10 @@ export const metadata: Metadata = {
     description: '独自に調査した健康に関する記事の一覧になります。公平な視点で情報を提供しています。',
   },
 };
-export default function Sample00() {
-  const twStayles = tv({
-    variants: {
-      style:{
-        text01:'text-cyan-400',
-      },
-    },
-  });
+export default function ArticlePage() {
   return (
-    <div className={twStayles({style:'text01'})}>
-      first_commit
-    </div>
+    <>
+      <ArticleList />
+    </>
   );
 }

@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Filter } from "lucide-react";
 import healthinfo from "@/public/data/healthinfo.json";
+import { HealthcareInfoRow } from "@/lib/healthcareInfo/interfaceutils";
 
 // 大項目：カテゴリー
 const categories = [
@@ -18,20 +19,20 @@ const categories = [
 ];
 
 // 健康情報一覧（トピック、論文、データ含む：最新順）
-const healthInfos = healthinfo;
+const NEWS_TOPICS: HealthcareInfoRow[] = healthinfo.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
 export default function HealthInfoList() {
   const [category, setCategory] = useState<number>(0);
   const [search, setSearch] = useState("");
 
   // フィルタリング
-  const filteredInfos = healthInfos.filter(info => {
+  const filteredInfos = NEWS_TOPICS.filter(info => {
     const matchCategory = !category || info.category === category;
     const matchSearch =
       !search ||
       info.title.includes(search) ||
-      info.description.includes(search) ||
-      info.tags.some(tag => tag.includes(search));
+      (info.description && info.description.includes(search)) ||
+      (Array.isArray(info.tags) && info.tags.some(tag => tag.includes(search)));
     return matchCategory && matchSearch;
   });
 
@@ -87,7 +88,7 @@ export default function HealthInfoList() {
             <CardContent className="pb-2">
               <p className="text-sm text-muted-foreground mb-3">{info.description}</p>
               <div className="flex flex-wrap gap-2 mb-3">
-                {info.tags.map(tag => (
+                {info.tags?.map(tag => (
                   <Badge key={tag} variant="outline" className="rounded-full px-2 py-1 text-xs">{tag}</Badge>
                 ))}
               </div>
@@ -97,9 +98,15 @@ export default function HealthInfoList() {
                 <span>記事投稿日：{info.date.split(" ")[0]}</span><br/>
               </div>
               <div className="flex items-center gap-2">
-                <Link href={info.url} target="_blank" rel="noopener noreferrer">
+                {info.url.includes("/health_info/article")?(
+                  <Link href={info.url} >
+                    <Button variant="link" className="px-0 h-auto text-primary text-xs">詳しく見る</Button>
+                  </Link>
+                ):( 
+                  <Link href={info.url} target="_blank" rel="noopener noreferrer">
                   <Button variant="link" className="px-0 h-auto text-primary text-xs">詳しく見る</Button>
-                </Link>
+                  </Link>
+                )}
               </div>
             </CardFooter>
           </Card>

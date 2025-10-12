@@ -65,7 +65,7 @@ export default function HomeNewsTopic(){
             <Link href="/health_info#healthinfo_list" className={twStayles({style:'link_btn'})}>
               健康情報一覧はこちら&nbsp;<span className="ml-1 text-lg">&rarr;</span>
             </Link>
-            <Link href="#news_topic" className={twStayles({style:'link_btn'})}>
+            <Link href="/health_info/article" className={twStayles({style:'link_btn'})}>
               記事一覧はこちら&nbsp;<span className="ml-1 text-lg">&rarr;</span>
             </Link>
             <Link href="#news_topic" className={twStayles({style:'link_btn'})}>

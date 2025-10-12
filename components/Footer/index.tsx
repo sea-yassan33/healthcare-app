@@ -15,8 +15,8 @@ const footerLinks = {
   service: {
     title: "サービス",
     links: [
-      { label: "トピック一覧", href: "#" },
-      { label: "論文一覧", href: "#" },
+      { label: "トピック一覧", href: "/health_info#healthinfo_list" },
+      { label: "記事一覧", href: "/health_info/article" },
       { label: "データ一覧", href: "#" },
       { label: "トレーニング情報", href: "/exercise/" },
       { label: "AI支援ツール", href: "#" }
@@ -26,8 +26,8 @@ const footerLinks = {
     title: "サポート",
     links: [
       { label: "サイトマップ", href: "#" },
-      { label: "利用規約", href: "#" },
-      { label: "プライバシーポリシー", href: "#" }
+      { label: "利用規約", href: "/terms" },
+      { label: "プライバシーポリシー", href: "/privacy" }
     ]
   }
 };

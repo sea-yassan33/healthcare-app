@@ -34,7 +34,7 @@ export default function HomeNewDataList(){
             最新データ
           </h2>
           <p className="text-lg text-gray-600">
-            調査データの情報をお届けします
+            【コンテンツ制作中】
           </p>
         </div>
         {/* News Cards */}

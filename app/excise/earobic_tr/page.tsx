@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
-    url: 'https://healthcare-app-seven.vercel.app/',
+    url: 'https://healthcare-app-seven.vercel.app/excise/earobic_tr',
     siteName: 'HealthHub',
     title: 'HealthHub | 有酸素運動リスト',
     description: 'HealthHub | 有酸素運動リストです。無理なく続けられる運動を見つけましょう。',
   },
 };
 
-export default function EarobicTrPage0() {
+export default function EarobicTrPage() {
   return (
     <section className="py-12">
       <EarobicHero />

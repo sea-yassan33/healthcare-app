@@ -62,7 +62,7 @@ export default function HomeNewsTopic(){
           </ul>
           {/* 下部ボタン */}
           <div className="flex flex-col md:flex-row gap-4 mt-8">
-            <Link href="/health_info" className={twStayles({style:'link_btn'})}>
+            <Link href="/health_info#healthinfo_list" className={twStayles({style:'link_btn'})}>
               健康情報一覧はこちら&nbsp;<span className="ml-1 text-lg">&rarr;</span>
             </Link>
             <Link href="#news_topic" className={twStayles({style:'link_btn'})}>

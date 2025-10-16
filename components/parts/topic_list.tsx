@@ -8,7 +8,7 @@ export default function TopickList({ documents, num}: DocumentListProps) {
   return(
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {documents.slice(0,num).map((item, index) => (
-        <Link href={`/health_info/article/${item.id}`} key={index} className="no-underline">
+        <Link href={`/health_info/article/article_${item.id}_detail`} key={index} className="no-underline">
           <Card className="overflow-hidden transition-all hover:shadow-lg">
             <CardHeader className="space-y-1">
               <div className="flex items-center justify-between">

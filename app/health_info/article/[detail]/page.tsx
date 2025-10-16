@@ -8,17 +8,20 @@ import json_hci_docment from "@/public/data/document.json";
 import { HCIDocument } from "@/lib/healthcareInfo/interfaceutils";
 import { Button } from '@/components/ui/button';
 // propsの定義
-type Props = { params: { id: string } };
+type Props = { params: { detail: string } };
 // メタデータ
-export function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
-  const HCI_DATA : HCIDocument | undefined =  json_hci_docment.find((doc) => doc.id === Number(id));
+export function generateMetadata({ params: { detail } }: Props): Promise<Metadata> {
+  // IDからドキュメントを取得
+  const id_str:string = detail.replace('article_','').replace('_detail','');
+  const HCI_DATA : HCIDocument | undefined =  json_hci_docment.find((doc) => doc.id === Number(id_str));
   return Promise.resolve({
     title: `Health Hub | ${HCI_DATA?.title ?? "Health Hub | 記事詳細"}` ,
     description: `Health Hub | ${HCI_DATA?.description ?? "Health Hub | 指定された記事が見つかりませんでした。"}`,
   });
 }
 // コンポーネント
-export default function ArticleDetail({ params: { id } }: Props) {
+export default function ArticleDetail({ params: { detail } }: Props) {
+  const id_str:string = detail.replace('article_','').replace('_detail','');
   const twStayles = tv({
     variants: {
       style: {
@@ -30,7 +33,7 @@ export default function ArticleDetail({ params: { id } }: Props) {
     },
   });
     // IDからドキュメントを取得
-  const HCI_DATA : HCIDocument | undefined =  json_hci_docment.find((doc) => doc.id === Number(id));
+  const HCI_DATA : HCIDocument | undefined =  json_hci_docment.find((doc) => doc.id === Number(id_str));
   // ドキュメントが存在しない場合
   if (!HCI_DATA) {
     return <p className="text-center text-gray-600">ドキュメントが見つかりませんでした。</p>;

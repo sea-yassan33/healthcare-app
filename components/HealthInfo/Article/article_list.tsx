@@ -15,7 +15,7 @@ export default function ArticleList() {
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {HCI_DATA.map((data, index) => (
-          <Link href={`/health_info/article/${data.id}`} key={index} className="no-underline">
+          <Link href={`/health_info/article/article_${data.id}_detail`} key={index} className="no-underline">
             <Card className="text-left shadow-sm border border-gray-200 hover:shadow-md transition">
               <CardHeader>
                 {data.category === "運動" && <BicepsFlexed className="h-6 w-6 text-black mb-2" />} 

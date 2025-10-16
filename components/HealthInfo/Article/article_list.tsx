@@ -4,7 +4,7 @@ import json_hci_docment from "@/public/data/document.json";
 import { HCIDocument } from "@/lib/healthcareInfo/interfaceutils";
 import Link from "next/link";
 
-const HCI_DATA : HCIDocument[] = json_hci_docment; 
+const HCI_DATA : HCIDocument[] = json_hci_docment.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()); 
 
 export default function ArticleList() {
   return (

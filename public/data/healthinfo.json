@@ -166,7 +166,7 @@
     {
         "id": 11,
         "category": 2,
-        "url": "/health_info/article/1",
+        "url": "/health_info/article/article_1_detail",
         "title": "運動習慣について",
         "description": "運動習慣についてのデータをまとめました",
         "tags": [
@@ -174,12 +174,12 @@
         ],
         "date": "2024-12-29 19:39:17",
         "created_at": "2025-10-12 15:08:19",
-        "updated_at": "2025-10-12 15:08:19"
+        "updated_at": "2025-10-16 23:21:40"
     },
     {
         "id": 12,
         "category": 2,
-        "url": "/health_info/article/2",
+        "url": "/health_info/article/article_2_detail",
         "title": "座り続けるリスク",
         "description": "座り続ける際の健康のリスクについて",
         "tags": [
@@ -189,12 +189,12 @@
         ],
         "date": "2024-12-29 20:19:43",
         "created_at": "2025-10-12 15:08:19",
-        "updated_at": "2025-10-12 15:08:19"
+        "updated_at": "2025-10-16 23:21:49"
     },
     {
         "id": 13,
         "category": 2,
-        "url": "/health_info/article/3",
+        "url": "/health_info/article/article_3_detail",
         "title": "脂肪肝について",
         "description": "脂肪肝とは。脂肪肝かのセルフチェックを紹介",
         "tags": [
@@ -203,12 +203,12 @@
         ],
         "date": "2024-12-29 21:46:58",
         "created_at": "2025-10-12 15:08:19",
-        "updated_at": "2025-10-12 15:08:19"
+        "updated_at": "2025-10-16 23:21:58"
     },
     {
         "id": 14,
         "category": 2,
-        "url": "/health_info/article/4",
+        "url": "/health_info/article/article_4_detail",
         "title": "トレーニングの原則",
         "description": "運動を行う際の基本原則についてまとめました",
         "tags": [
@@ -217,12 +217,12 @@
         ],
         "date": "2025-01-02 16:28:34",
         "created_at": "2025-10-12 15:08:19",
-        "updated_at": "2025-10-12 15:08:19"
+        "updated_at": "2025-10-16 23:22:08"
     },
     {
         "id": 15,
         "category": 2,
-        "url": "/health_info/article/5",
+        "url": "/health_info/article/article_5_detail",
         "title": "年齢と体力",
         "description": "年齢と体力に関しての成長曲線について",
         "tags": [
@@ -231,12 +231,12 @@
         ],
         "date": "2025-01-02 16:48:38",
         "created_at": "2025-10-12 15:08:19",
-        "updated_at": "2025-10-12 15:08:19"
+        "updated_at": "2025-10-16 23:22:16"
     },
     {
         "id": 16,
         "category": 2,
-        "url": "/health_info/article/6",
+        "url": "/health_info/article/article_6_detail",
         "title": "超回復",
         "description": "超回復について",
         "tags": [
@@ -245,6 +245,20 @@
         ],
         "date": "2025-01-03 08:03:46",
         "created_at": "2025-10-12 15:08:19",
-        "updated_at": "2025-10-12 15:08:19"
+        "updated_at": "2025-10-16 23:22:32"
+    },
+    {
+        "id": 17,
+        "category": 2,
+        "url": "/health_info/article/article_7_detail",
+        "title": "予防理学療法の定義",
+        "description": "予防理学療法とは。予防領域についてや目的、必要性についてまとめました。",
+        "tags": [
+            "予防",
+            "健康増進"
+        ],
+        "date": "2025-10-16 23:00:00",
+        "created_at": "2025-10-16 23:20:24",
+        "updated_at": "2025-10-16 23:20:24"
     }
 ]

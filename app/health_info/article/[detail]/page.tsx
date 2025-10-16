@@ -28,7 +28,7 @@ export default function ArticleDetail({ params: { detail } }: Props) {
         container:
           "bg-white text-gray-800 flex flex-col justify-center items-center mb-6 px-4 sm:px-6 lg:px-8", 
         content:
-          "w-full sm:w-[90%] md:w-[80%] lg:w-[60%] bg-white shadow-lg p-4 sm:p-6 lg:p-8 box-border", 
+          "w-full sm:w-[90%] md:w-[80%] lg:w-[70%] bg-white shadow-lg p-4 sm:p-6 lg:p-8 box-border", 
       },
     },
   });
@@ -47,7 +47,7 @@ export default function ArticleDetail({ params: { detail } }: Props) {
             <h2 className="text-lg sm:text-xl text-left">更新日: {HCI_DATA.updatedAt}</h2>
           </div>
         </header>
-        <section className="prose max-w">
+        <section className="prose max-w-none">
           <Markdown 
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeHighlight]}

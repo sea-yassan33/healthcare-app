@@ -1,0 +1,192 @@
+[
+  {
+    "minute": 0,
+    "speed": 5.5,
+    "time_diff_min": 0.0,
+    "time_diff_hr": 0.0,
+    "segment_dist_km": 0.0,
+    "cum_dist_km": 0.0,
+    "segment_kcal": 0.0,
+    "cum_kcal": 0.0
+  },
+  {
+    "minute": 5,
+    "speed": 5.5,
+    "time_diff_min": 5.0,
+    "time_diff_hr": 0.08333333333333333,
+    "segment_dist_km": 0.4583333333333333,
+    "cum_dist_km": 0.4583333333333333,
+    "segment_kcal": 19.0,
+    "cum_kcal": 19.0
+  },
+  {
+    "minute": 5,
+    "speed": 8.0,
+    "time_diff_min": 0.0,
+    "time_diff_hr": 0.0,
+    "segment_dist_km": 0.0,
+    "cum_dist_km": 0.4583333333333333,
+    "segment_kcal": 0.0,
+    "cum_kcal": 19.0
+  },
+  {
+    "minute": 7,
+    "speed": 8.0,
+    "time_diff_min": 2.0,
+    "time_diff_hr": 0.03333333333333333,
+    "segment_dist_km": 0.26666666666666666,
+    "cum_dist_km": 0.725,
+    "segment_kcal": 16.6,
+    "cum_kcal": 35.6
+  },
+  {
+    "minute": 7,
+    "speed": 5.5,
+    "time_diff_min": 0.0,
+    "time_diff_hr": 0.0,
+    "segment_dist_km": 0.0,
+    "cum_dist_km": 0.725,
+    "segment_kcal": 0.0,
+    "cum_kcal": 35.6
+  },
+  {
+    "minute": 10,
+    "speed": 5.5,
+    "time_diff_min": 3.0,
+    "time_diff_hr": 0.05,
+    "segment_dist_km": 0.275,
+    "cum_dist_km": 1.0,
+    "segment_kcal": 11.4,
+    "cum_kcal": 47.0
+  },
+  {
+    "minute": 10,
+    "speed": 8.0,
+    "time_diff_min": 0.0,
+    "time_diff_hr": 0.0,
+    "segment_dist_km": 0.0,
+    "cum_dist_km": 1.0,
+    "segment_kcal": 0.0,
+    "cum_kcal": 47.0
+  },
+  {
+    "minute": 12,
+    "speed": 8.0,
+    "time_diff_min": 2.0,
+    "time_diff_hr": 0.03333333333333333,
+    "segment_dist_km": 0.26666666666666666,
+    "cum_dist_km": 1.2666666666666666,
+    "segment_kcal": 16.6,
+    "cum_kcal": 63.6
+  },
+  {
+    "minute": 12,
+    "speed": 5.5,
+    "time_diff_min": 0.0,
+    "time_diff_hr": 0.0,
+    "segment_dist_km": 0.0,
+    "cum_dist_km": 1.2666666666666666,
+    "segment_kcal": 0.0,
+    "cum_kcal": 63.6
+  },
+  {
+    "minute": 15,
+    "speed": 5.5,
+    "time_diff_min": 3.0,
+    "time_diff_hr": 0.05,
+    "segment_dist_km": 0.275,
+    "cum_dist_km": 1.5416666666666665,
+    "segment_kcal": 11.4,
+    "cum_kcal": 75.0
+  },
+  {
+    "minute": 15,
+    "speed": 8.0,
+    "time_diff_min": 0.0,
+    "time_diff_hr": 0.0,
+    "segment_dist_km": 0.0,
+    "cum_dist_km": 1.5416666666666665,
+    "segment_kcal": 0.0,
+    "cum_kcal": 75.0
+  },
+  {
+    "minute": 17,
+    "speed": 8.0,
+    "time_diff_min": 2.0,
+    "time_diff_hr": 0.03333333333333333,
+    "segment_dist_km": 0.26666666666666666,
+    "cum_dist_km": 1.8083333333333331,
+    "segment_kcal": 16.6,
+    "cum_kcal": 91.6
+  },
+  {
+    "minute": 17,
+    "speed": 5.5,
+    "time_diff_min": 0.0,
+    "time_diff_hr": 0.0,
+    "segment_dist_km": 0.0,
+    "cum_dist_km": 1.8083333333333331,
+    "segment_kcal": 0.0,
+    "cum_kcal": 91.6
+  },
+  {
+    "minute": 20,
+    "speed": 5.5,
+    "time_diff_min": 3.0,
+    "time_diff_hr": 0.05,
+    "segment_dist_km": 0.275,
+    "cum_dist_km": 2.083333333333333,
+    "segment_kcal": 11.4,
+    "cum_kcal": 103.0
+  },
+  {
+    "minute": 20,
+    "speed": 8.0,
+    "time_diff_min": 0.0,
+    "time_diff_hr": 0.0,
+    "segment_dist_km": 0.0,
+    "cum_dist_km": 2.083333333333333,
+    "segment_kcal": 0.0,
+    "cum_kcal": 103.0
+  },
+  {
+    "minute": 22,
+    "speed": 8.0,
+    "time_diff_min": 2.0,
+    "time_diff_hr": 0.03333333333333333,
+    "segment_dist_km": 0.26666666666666666,
+    "cum_dist_km": 2.3499999999999996,
+    "segment_kcal": 16.6,
+    "cum_kcal": 119.6
+  },
+  {
+    "minute": 22,
+    "speed": 5.5,
+    "time_diff_min": 0.0,
+    "time_diff_hr": 0.0,
+    "segment_dist_km": 0.0,
+    "cum_dist_km": 2.3499999999999996,
+    "segment_kcal": 0.0,
+    "cum_kcal": 119.6
+  },
+  {
+    "minute": 25,
+    "speed": 5.5,
+    "time_diff_min": 3.0,
+    "time_diff_hr": 0.05,
+    "segment_dist_km": 0.275,
+    "cum_dist_km": 2.6249999999999996,
+    "segment_kcal": 11.4,
+    "cum_kcal": 131.0
+  },
+  {
+    "minute": 30,
+    "speed": 5.5,
+    "time_diff_min": 5.0,
+    "time_diff_hr": 0.08333333333333333,
+    "segment_dist_km": 0.4583333333333333,
+    "cum_dist_km": 3.083333333333333,
+    "segment_kcal": 19.0,
+    "cum_kcal": 150.0
+  }
+]

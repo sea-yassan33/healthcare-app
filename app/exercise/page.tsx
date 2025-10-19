@@ -45,14 +45,14 @@ export default function ExercisePage() {
           <Link href="/exercise/earobic_tr">
             <Button className={twStayles({style:'section02_button'})} variant="outline">有酸素トレーニング</Button>
           </Link>
-          <Link href="#">
-            <Button className={twStayles({style:'section02_button'})} variant="outline">トレーニングプログラム</Button>
-          </Link>
-          <Link href="#">
+          <Link href="/exercise/interval_tr">
             <Button className={twStayles({style:'section02_button'})} variant="outline">インターバルトレーニング</Button>
           </Link>
           <Link href="#">
-            <Button className={twStayles({style:'section02_button'})} variant="outline">Myトレーニング</Button>
+            <Button className={twStayles({style:'section02_button'})} variant="outline">アジリティトレーニング</Button>
+          </Link>
+          <Link href="#">
+            <Button className={twStayles({style:'section02_button'})} variant="outline">トレーニングプログラム</Button>
           </Link>
           <Link href="#">
             <Button className={twStayles({style:'section02_button'})} variant="outline">AIトレーニング作成</Button>

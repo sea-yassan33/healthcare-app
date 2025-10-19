@@ -33,6 +33,9 @@ npm install react-youtube
 ## mackdown
 npm install react-markdown remark-gfm
 npm install @tailwindcss/typography
+
+## グラフを描画
+npm install recharts
 ```
 
 ## python

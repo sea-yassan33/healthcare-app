@@ -33,6 +33,9 @@ export default function ItProgram01() {
             <LineChart data={data}>
               <XAxis
                 dataKey="minute"
+                type="number"
+                domain={[0, "dataMax"]}
+                tickCount={10}
                 label={{ value: "時間 (分)", position: "insideBottom", offset: -5 }}
               />
               <YAxis

@@ -47,7 +47,7 @@ export default function ArticleDetail({ params: { detail } }: Props) {
             <h2 className="text-lg sm:text-xl text-left">更新日: {HCI_DATA.updatedAt}</h2>
           </div>
         </header>
-        <section className="prose max-w-none">
+        <div className="prose max-w-none">
           <Markdown 
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeHighlight]}
@@ -65,7 +65,7 @@ export default function ArticleDetail({ params: { detail } }: Props) {
           >
             {HCI_DATA.content}
           </Markdown>
-        </section>
+        </div>
         <Link href="/health_info/article" className='float-right'>
           <Button variant="secondary" className='m-2'>一覧に戻る</Button>
         </Link>

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, Dumbbell } from "lucide-react";
+import { FaLaptopMedical } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
 import { tv } from 'tailwind-variants';
@@ -11,6 +12,13 @@ const menu_list = [
     description: "独自調査した健康に関する最新記事を提供します。",
     link: "/health_info/article",
     image: "https://i.gyazo.com/746ba1df96721f92c2e14cfff7f6d05a.jpg",
+  },
+  {
+    icon: FaLaptopMedical,
+    title: "コンディション情報",
+    description: "コンディショニングや疾病予防など予防理学療法の観点で情報を提供します。",
+    link: "/health_info/prevent/",
+    image: "https://i.gyazo.com/48995609561ed04597f7dd2c33965587.jpg",
   },
   {
     icon: Dumbbell,

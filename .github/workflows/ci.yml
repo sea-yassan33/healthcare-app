@@ -1,0 +1,29 @@
+name: Next.js CI Check
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  ci-check:
+    runs-on: ubuntu-latest
+    steps:
+      # リポジトリをチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      # Node.js のセットアップ
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      # 依存関係のインストール
+      - name: Install dependencies
+        run: npm ci
+      # ESLint チェック
+      - name: Run ESLint
+        run: npm run lint
+      # TypeScript 型チェック
+      - name: Run TypeScript_type-check
+        run: npx tsc --noEmit
+      # Next.js のビルド確認
+      - name: Run Next.js build
+        run: npm run build

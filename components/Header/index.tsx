@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, Heart } from "lucide-react";
 import Link from "next/link";
 import { tv } from 'tailwind-variants';
+import BreadCrumbs from "../Untils/breadcrumbs";
 
 export default function Header() {
     const twStayles = tv({
@@ -91,6 +92,7 @@ export default function Header() {
           </nav>
         </div>
       )}
+      <BreadCrumbs />
     </header>
   );
 }

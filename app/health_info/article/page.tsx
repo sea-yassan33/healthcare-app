@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { JsonLd } from '@/components/Untils/JsonLd';
 import ArticleList from '@/components/HealthInfo/Article/article_list';
 export const metadata: Metadata = {
   title: 'Health Hub | 健康記事一覧',
@@ -17,6 +18,11 @@ export default function ArticlePage() {
   return (
     <>
       <ArticleList />
+      <JsonLd crumbs={[
+        { name: "Home", href: "/" },
+        { name: "HealthInfo", href: "/health_info" },
+        { name: "Article", href: "/health_info/article" },
+      ]} />
     </>
   );
 }

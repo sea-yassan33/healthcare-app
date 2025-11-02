@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import EarobicHero from '@/components/ExercisePage/Earobic/earobic-hero';
 import EarobicList from '@/components/ExercisePage/Earobic/earobic-list';
+import { JsonLd } from '@/components/Untils/JsonLd';
 export const metadata: Metadata = {
   title: 'Health Hub | 有酸素運動リスト',
   description: 'HealthHub | 有酸素運動リストです。無理なく続けられる運動を見つけましょう。',
@@ -17,9 +18,16 @@ export const metadata: Metadata = {
 
 export default function EarobicTrPage() {
   return (
-    <section className="py-12">
-      <EarobicHero />
-      <EarobicList />
-    </section>
+    <>
+      <section className="py-12">
+        <EarobicHero />
+        <EarobicList />
+      </section>
+      <JsonLd crumbs={[
+        { name: "Home", href: "/" },
+        { name: "Exercise", href: "/exercise" },
+        { name: "EarobicTr", href: "/exercise/earobic_tr" },
+      ]} />
+    </>
   )
 }

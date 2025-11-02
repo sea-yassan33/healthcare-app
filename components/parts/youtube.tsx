@@ -8,7 +8,7 @@ export default function YoutubeParts({ name, url, chanel }: Props) {
       <div className="font-bold text-lg">
         【YouTube】＠{chanel}
       </div>
-      <div className="w-[50%] h-[50%] aspect-video bg-black rounded-lg overflow-hidden">
+      <div className="w-[100%] h-[100%] sm:w-[50%] sm:h-[50%] aspect-video bg-black rounded-lg overflow-hidden">
         <iframe
           src={youtubeUrl}
           title={name}

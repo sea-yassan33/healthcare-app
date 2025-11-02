@@ -17,7 +17,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-
   return (
     <>
       <main>
@@ -28,7 +27,9 @@ export default function Home() {
         <AppsSection />
         <AboutSection />
       </main>
-      <JsonLd />
+      <JsonLd crumbs={[
+        { name: "Home", href: "/" },
+      ]}/>
     </>
   );
 }

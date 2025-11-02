@@ -1,4 +1,5 @@
 import IntervalList from '@/components/ExercisePage/IntervalTr/interval-list';
+import { JsonLd } from '@/components/Untils/JsonLd';
 import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Health Hub | インターバルTR',
@@ -16,15 +17,22 @@ export const metadata: Metadata = {
 
 export default function IntervalTrPage() {
   return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="py-4 px-6 max-w-6xl mx-auto text-center">
-        <h1 className="text-3xl font-bold mb-2">インターバルトレーニング</h1>
-        <p className="text-gray-500 mb-2 max-w-2xl mx-auto">
-          インターバルトレーニングを紹介するページです。<br/>
-          メリハリをつけた効果的なトレーニング方法を紹介します。
-        </p>
-      </div>
-      <IntervalList />
-    </main>
+    <>
+      <main className="container mx-auto px-4 py-8">
+        <div className="py-4 px-6 max-w-6xl mx-auto text-center">
+          <h1 className="text-3xl font-bold mb-2">インターバルトレーニング</h1>
+          <p className="text-gray-500 mb-2 max-w-2xl mx-auto">
+            インターバルトレーニングを紹介するページです。<br />
+            メリハリをつけた効果的なトレーニング方法を紹介します。
+          </p>
+        </div>
+        <IntervalList />
+      </main>
+      <JsonLd crumbs={[
+        { name: "Home", href: "/" },
+        { name: "Exercise", href: "/exercise" },
+        { name: "IntervalTr", href: "/exercise/interval_tr" },
+      ]} />
+    </>
   )
 }

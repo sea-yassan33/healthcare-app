@@ -1,4 +1,5 @@
 import ItProgram01 from '@/components/ExercisePage/IntervalTr/it-01';
+import { JsonLd } from '@/components/Untils/JsonLd';
 import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Health Hub | インターバルTR_01',
@@ -16,14 +17,22 @@ export const metadata: Metadata = {
 
 export default function IntervalTr01() {
   return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="py-4 px-6 max-w-6xl mx-auto text-center">
-        <h1 className="text-3xl font-bold mb-2">インターバルTR - NO.1</h1>
-        <p className="text-gray-500 mb-2 max-w-2xl mx-auto">
-          低強度２分・高強度２分を繰り返して行います。
-        </p>
-      </div>
-      <ItProgram01 />
-    </main>
+    <>
+      <main className="container mx-auto px-4 py-8">
+        <div className="py-4 px-6 max-w-6xl mx-auto text-center">
+          <h1 className="text-3xl font-bold mb-2">インターバルTR - NO.1</h1>
+          <p className="text-gray-500 mb-2 max-w-2xl mx-auto">
+            低強度２分・高強度２分を繰り返して行います。
+          </p>
+        </div>
+        <ItProgram01 />
+      </main>
+      <JsonLd crumbs={[
+        { name: "Home", href: "/" },
+        { name: "Exercise", href: "/exercise" },
+        { name: "IntervalTr", href: "/exercise/interval_tr" },
+        { name: "IntervalTr01", href: "/exercise/interval_tr/it_01" },
+      ]} />
+    </>
   )
 }

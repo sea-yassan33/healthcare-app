@@ -1,4 +1,5 @@
 import MuscleContent from "@/components/ExercisePage/MuscleTr";
+import { JsonLd } from "@/components/Untils/JsonLd";
 import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Health Hub | 筋力トレーニング',
@@ -15,8 +16,15 @@ export const metadata: Metadata = {
 };
 export default function MusclePage() {
   return (
-    <main className="p-6 md:p-8 space-y-6">
-      <MuscleContent />
-    </main>
+    <>
+      <main className="p-6 md:p-8 space-y-6">
+        <MuscleContent />
+      </main>
+      <JsonLd crumbs={[
+        { name: "Home", href: "/" },
+        { name: "Exercise", href: "/exercise" },
+        { name: "MuscleTr", href: "/exercise/muscle_tr" },
+      ]} />
+    </>
   );
 }

@@ -12,8 +12,8 @@ const categories = [
         url: "/health_info/prevent/knee_oa"
       },
       {
-        name: "変形性股関節症",
-        url: "/health_info/prevent/hip_oa"
+        name: "肉離れ",
+        url: "/health_info/prevent/pulled_muscle"
       },
     ],
   },

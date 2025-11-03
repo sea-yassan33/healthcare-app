@@ -22,9 +22,9 @@ export default function FemurFracturePage() {
       <section className="w-full bg-white py-4">
         <div className="container mx-auto px-4">
           <div className="mb-4 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h1 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               大腿骨骨折について
-            </h2>
+            </h1>
           </div>
         </div>
         <FemurFractureCont />

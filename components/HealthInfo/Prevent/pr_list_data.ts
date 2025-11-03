@@ -9,11 +9,11 @@ const categories = [
       },
       {
         name: "変形性膝関節症",
-        url: "#"
+        url: "/health_info/prevent/knee_oa"
       },
       {
         name: "変形性股関節症",
-        url: "#"
+        url: "/health_info/prevent/hip_oa"
       },
     ],
   },
@@ -23,11 +23,11 @@ const categories = [
     items: [
       {
         name: "筋筋膜性疼痛症候群",
-        url: "#"
+        url: "/health_info/prevent/mps"
       },
       {
         name: "脊柱管狭窄症",
-        url: "#"
+        url: "/health_info/prevent/scs"
       },
     ],
   },
@@ -37,7 +37,7 @@ const categories = [
     items: [
       {
         name: "歯周病",
-        url: "#"
+        url: "/health_info/prevent/periodontal"
       },
     ],
   },
@@ -47,15 +47,15 @@ const categories = [
     items: [
       {
         name: "寝返り",
-        url: "#"
+        url: "/health_info/prevent/tat"
       },
       {
         name: "起き上がり",
-        url: "#"
+        url: "/health_info/prevent/getting_up"
       },
       {
         name: "立ち上がり",
-        url: "#"
+        url: "/health_info/prevent/standing_up"
       },
     ],
   },
@@ -65,11 +65,11 @@ const categories = [
     items: [
       {
         name: "睡眠",
-        url: "#"
+        url: "/health_info/prevent/sleep"
       },
       {
         name: "歩く",
-        url: "#"
+        url: "/health_info/prevent/walk"
       },],
   },
   {
@@ -78,11 +78,11 @@ const categories = [
     items: [
       {
         name: "座りすぎ",
-        url: "#"
+        url: "/health_info/prevent/sitting_too_much"
       },
       {
         name: "飲みすぎ",
-        url: "#"
+        url: "/health_info/prevent/drinking_too_much"
       },
     ],
   },

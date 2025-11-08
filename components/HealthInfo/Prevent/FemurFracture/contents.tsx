@@ -33,9 +33,9 @@ export default function FemurFractureCont() {
     <>
       <div className={cn(styles[0].content)}>
         {/* 目次・大腿骨骨折とは */}
-        <h1 className="border-b-4 border-[#415C52] pb-2 mb-4 font-bold text-3xl">
+        <h2 className="border-b-4 border-[#415C52] pb-2 mb-4 font-bold text-3xl">
           目次
-        </h1>
+        </h2>
         <ul className="my-5 list-disc pl-6 text-gray-700">
           {abstract.slice(1).map((abs,i)=>(
             <Link key={i} href={`#${abs.name}`}>
